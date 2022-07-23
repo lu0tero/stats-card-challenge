@@ -1,8 +1,8 @@
 /* Google fonts */
 /* Lexen Deca & Inter*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -44,15 +44,15 @@ body {
 }
 
 .card-text h1 {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-weight: 700;
     color: var(--white);
 }
 
 .card-text .subtitle {
     color: var(--pWhite);
-    font-family: 'Lexend Deca';
-    line-height: 25px;  
+    font-family: "Lexend Deca";
+    line-height: 25px;
 }
 
 .card-text span {
@@ -61,7 +61,7 @@ body {
 
 .img-container {
     content: url(images/image-header-desktop.jpg);
-    filter: invert(10%) sepia(50%) saturate(500%) hue-rotate(233deg) brightness(55%) contrast(100%);
+    filter: invert(10%) sepia(100%) saturate(500%) hue-rotate(233deg) brightness(45%) contrast(100%);
     border-radius: 5px;
     object-fit: cover;
     height: auto;
@@ -70,7 +70,7 @@ body {
 .stats-container {
     display: flex;
     justify-content: space-between;
-    font-family: 'Inter';
+    font-family: "Inter";
     margin-top: 35px;
 }
 
@@ -84,7 +84,7 @@ body {
     color: var(--hWhite);
     text-transform: uppercase;
     font-size: 12px;
-    font-family: 'Lexend Deca';
+    font-family: "Lexend Deca";
     font-weight: 400;
 }
 
@@ -92,78 +92,95 @@ body {
 footer {
     position: absolute;
     bottom: 0;
-    font-family: 'Lexend Deca';
+    font-family: "Lexend Deca";
     color: var(--white);
     margin-bottom: 10px;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: var(--softViolet);
+}
 
+/* Mobile and Tablet version ⬇ */
 
-@media only screen and (max-width: 375px){
+@media (max-width: 1060px) {
+    body {
+        height: 100%;
+        position: relative;
+    }
+
+    body::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: var(--softViolet);
+        border: 3px solid var(--vDarkBlue);
+    }
+
+    body *::selection {
+        background: var(--white);
+        color: var(--softViolet);
+    }
 
     br {
         display: none;
     }
 
     .card-container {
+        width: 87.5%;
+        margin: 90px 0;
+        border-radius: 10px;
         flex-direction: column-reverse;
-        margin: 30px;
-    }
-    
-    .card-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        padding: 15px 0 15px 0;
-    }
-    
-    .card-text h1 {
-        text-align: center;
-    }
-
-    .card-text span {
-        color: var(--softViolet);
-    }
-    
-    .card-text .subtitle {
-        color: var(--pWhite);
-        font-family: 'Lexend Deca';
-        line-height: 25px;
-        text-align: center;
-    }
-
-    .img-container {
-        content: url(images/image-header-mobile.jpg);
-        filter: invert(10%) sepia(50%) saturate(500%) hue-rotate(233deg) brightness(55%) contrast(100%);
-        border-radius: 5px;
-        width: 320px;
-        object-fit: cover;
-        height: auto;
-    }
-    
-    .stats-container {
-        display: flex;
         justify-content: space-between;
-        gap: 25px;
+    }
+
+    .card-container .img-container {
+        width: 100%;
+        display: block;
+    }
+
+    .card-container .card-text {
+        width: 100%;
+        height: 65%;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+
+    .card-text h1 {
+        width: 80%;
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .card-text .subtitle {
+        width: 85%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .card-text .stats-container {
+        margin: 40px 0;
+        gap: 30px;
         flex-direction: column;
-        font-family: 'Inter';
     }
-    
-    .num {
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--white);
+
+    .stats-container div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
     }
-    
-    .stats-text {
-        color: var(--hWhite);
-        text-transform: uppercase;
-        font-size: 12px;
-        font-family: 'Lexend Deca';
-        font-weight: 400;
+
+    .stats-container .num {
+        font-size: 1.4rem;
     }
 }
